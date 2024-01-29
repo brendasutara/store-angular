@@ -61,7 +61,7 @@
 </nav>
 
 <!-- SideMenu -->
-<div
+<aside
   class="fixed border-l-4 top-0 right-0 bg-red z-40 w-72 h-screen p-4 overflow-y-auto transition-transform bg-white"
   [class.translate-x-full]="hideSideMenu()"
   >
@@ -85,11 +85,17 @@
     </button>
   </div>
   <!-- Productos para aparecer -->
-  <div>
-    <div *ngFor="let product of cart">
-      <img [src]="product.image" [alt]="product.title">
-      <p>{{ product.title }}</p>
-      <p>{{ product.price }}</p>
+  <div class="mb-4">
+    <div
+      *ngFor="let product of cart"
+      class="flex items-start gap-2 mt-4 shadow-md rounded-lg">
+      <figure class="w-20 h-20">
+        <img class="w-full h-full rounded-lg object-cover" [src]="product.image" [alt]="product.title">
+      </figure>
+      <div class="justify-between items-center gap-2">
+        <p class="text-sm font-light p-2">{{ product.title }}</p>
+        <p class="text-base font-medium">${{ product.price }}</p>
+      </div>
     </div>
   </div>
-</div>
+</aside>
