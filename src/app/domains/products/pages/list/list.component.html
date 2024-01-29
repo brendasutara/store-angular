@@ -1,10 +1,10 @@
 <div class="container mx-auto">
-  <app-header />
+  <app-header [cart]="cart()"/>
   <div class="grid grid-cols-4 gap-8 mt-5">
     @for (product of products(); track $index) {
       <app-product
       [product]="product"
-      (addToCart)="fromChild($event)"/>
+      (addToCart)="addToCart($event)"/>
     }
   </div>
 </div>
