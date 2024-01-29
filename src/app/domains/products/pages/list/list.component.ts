@@ -10,5 +10,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
-
+  fromChild (event: string) {
+    console.log('estamos en el padre');
+    console.log(event);
+  }
 }
