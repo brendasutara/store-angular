@@ -2,11 +2,12 @@ import { Component, signal } from '@angular/core';
 import { ProductComponent } from '../../components/product/product.component';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../../shared/models/product.model';
+import { HeaderComponent } from '../../../shared/components/header/header.component';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CommonModule, ProductComponent],
+  imports: [CommonModule, ProductComponent, HeaderComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
@@ -42,6 +43,34 @@ export class ListComponent {
         title: 'Pro 4',
         price: 180,
         image: 'https://picsum.photos/640/640?r=80',
+        creationAt: new Date().toISOString()
+      },
+      {
+        id: Date.now(),
+        title: 'Pro 5',
+        price: 100,
+        image: 'https://picsum.photos/640/640?r=223',
+        creationAt: new Date().toISOString()
+      },
+      {
+        id: Date.now(),
+        title: 'Pro 6',
+        price: 350,
+        image: 'https://picsum.photos/640/640?r=112',
+        creationAt: new Date().toISOString()
+      },
+      {
+        id: Date.now(),
+        title: 'Pro 7',
+        price: 200,
+        image: 'https://picsum.photos/640/640?r=120',
+        creationAt: new Date().toISOString()
+      },
+      {
+        id: Date.now(),
+        title: 'Pro 8',
+        price: 180,
+        image: 'https://picsum.photos/640/640?r=8520',
         creationAt: new Date().toISOString()
       },
     ];
