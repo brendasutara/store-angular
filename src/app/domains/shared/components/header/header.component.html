@@ -90,7 +90,7 @@
       *ngFor="let product of cart()"
       class="flex justify-between items-center space-y-2 gap-2 mt-4 shadow-md rounded-lg">
       <figure class="w-20 h-20">
-        <img class="w-full h-full rounded-lg object-cover" [src]="product.image" [alt]="product.title">
+        <img class="w-full h-full rounded-lg object-cover" [src]="product.images[0]" [alt]="product.title">
       </figure>
       <div class="justify-between items-center gap-2 p-1">
         <p class="text-sm font-light p-2">{{ product.title }}</p>
