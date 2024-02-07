@@ -5,17 +5,18 @@
       <li
         routerLink="/"
         class="p-2 mt-3 border rounded-lg cursor-pointer">
-          All
+        All
       </li>
-      <li
-        *ngFor="let category of categories()"
-        class="p-2 mt-3 border rounded-lg cursor-pointer">
-        <a
-          routerLink="/"
-          [queryParams]="{category_id: category.id}">
+      @for (category of categories(); track category) {
+        <li
+          class="p-2 mt-3 border rounded-lg cursor-pointer">
+          <a
+            routerLink="/"
+            [queryParams]="{category_id: category.id}">
             {{ category.name }}
-        </a>
-      </li>
+          </a>
+        </li>
+      }
     </ul>
   </aside>
 
@@ -23,10 +24,10 @@
     <div class="grid grid-cols-4 gap-8">
       @for (product of products(); track $index) {
         <app-product
-        [product]="product"
-        (addToCart)="addToCart($event)"/>
-      }
+          [product]="product"
+          (addToCart)="addToCart($event)"/>
+        }
+      </div>
     </div>
-  </div>
 
-</div>
+  </div>
