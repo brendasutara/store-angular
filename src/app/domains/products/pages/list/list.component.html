@@ -1,9 +1,32 @@
-<div class="container mx-auto">
-  <div class="grid grid-cols-4 gap-8 mt-5">
-    @for (product of products(); track $index) {
-      <app-product
-      [product]="product"
-      (addToCart)="addToCart($event)"/>
-    }
+<div class="flex space-x-4 mt-5">
+
+  <aside class="w-80">
+    <ul>
+      <li
+        routerLink="/"
+        class="p-2 mt-3 border rounded-lg cursor-pointer">
+          All
+      </li>
+      <li
+        *ngFor="let category of categories()"
+        class="p-2 mt-3 border rounded-lg cursor-pointer">
+        <a
+          routerLink="/"
+          [queryParams]="{category_id: category.id}">
+            {{ category.name }}
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <div class="w-full container mx-auto">
+    <div class="grid grid-cols-4 gap-8">
+      @for (product of products(); track $index) {
+        <app-product
+        [product]="product"
+        (addToCart)="addToCart($event)"/>
+      }
+    </div>
   </div>
+
 </div>
